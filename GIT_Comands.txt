@@ -5,9 +5,9 @@ git commit -m "my first repository"
 git commit -a -m -a "commit without adding "
 git logs
 touch .gitignore  #Making gitignore file in respozitory     
-git pusch
-git pull
+git pusch          git push origin master
+git pull          git pull origin
 git stash
 git stash apply
-git remote
+git remote     -v
 git clone <URL> downloading repoziroty 
