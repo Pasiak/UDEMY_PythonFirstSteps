@@ -2,10 +2,12 @@ git status
 git add .
 git add index.html
 git commit -m "my first repository"
-git commit -m -a "commit without adding "
+git commit -a -m -a "commit without adding "
 git logs
 touch .gitignore  #Making gitignore file in respozitory     
 git pusch
 git pull
 git stash
 git stash apply
+git remote
+git clone <URL> downloading repoziroty 
