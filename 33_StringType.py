@@ -23,6 +23,10 @@ folder1 = 'scripts\\python\\'
 file1 = 'myscript.ph'
 path1 = drive1+folder1+file1
 print(path1)
+
+print("Changes for GIT commit learning")
+
+
     
 
 
