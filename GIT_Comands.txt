@@ -1,0 +1,4 @@
+git status
+git add .
+git add index.html
+git commit -m "my first repository"
