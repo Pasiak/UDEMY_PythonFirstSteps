@@ -11,7 +11,8 @@ print(min(fsmaller,fbigger), max(fsmaller,fbigger))
 
 print("\n")
 
-print(pow(2,8))    #potęgowanie
+print(pow(2,8))
+# potęgowanie
 print(pow(9,0.5)) #pierwiastek z 9 = 3  | bo 9 do 1/2 = 3
 print(math.sqrt(16)) #pierwiastek kwadratowy z 16
 

@@ -1,0 +1,18 @@
+Skrypt sumuluje logowanie sie uzytkownika oraz tworzenie nowego konta. Informacje zapisywane sa do pliku
+
+sprawdzić czy użytkownik posiada konto
+sprawdzić czy istnieje "baza danych"
+
+	jeśli tak
+		pobrac od niego hasło
+		sprawdzić czy zawiera duzy znak i cyfre
+		sprawdzic czy login i hasło się zgadzają
+		
+		
+
+	jesli nie
+		utworzyć nowe konto
+		dac możliwośc wygenerowania hsała
+		sPRAWDZIC CZY W EMAILU WYSTEPUJE ZNAK @ ORAZ.
+
+zapisac wyniki do pliku

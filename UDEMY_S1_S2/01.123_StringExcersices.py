@@ -11,10 +11,10 @@ print(line.find('e'))
 print(line.rfind('e'))
 print(line.index('e')) 
 print(line.rindex('e')) 
-print("ę" in line)
+print("s" in line)
 print(line.startswith('this')) 
 print(line.endswith('text'))
-import string
+
 
 print(line.split())
 list = line.split()
