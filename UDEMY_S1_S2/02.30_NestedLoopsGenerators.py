@@ -53,3 +53,19 @@ while True:
     except StopIteration:
         print("All values has been generated")
         break
+
+
+#LAB 2
+counter = 0
+ports = ['WAW', 'KRK', 'GDN', 'KTW', 'WMI', 'WRO', 'POZ', 'RZE', 'SZZ',
+         'LUZ', 'BZG', 'LCJ', 'SZY', 'IEG', 'RDO']
+
+routesGen = ((start, stop) for start in ports for stop in ports if start < stop)
+while True:
+    try:
+        print(next(routesGen))
+        counter += 1
+
+    except StopIteration:
+        print("There is {} ways".format(counter))
+        break
