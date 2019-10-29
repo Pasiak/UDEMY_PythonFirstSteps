@@ -1,12 +1,15 @@
+brandOnSale = "Opel"
+
 class Car:
     numOfCars = 0
     listOfCars = []
 
-    def __init__(self, brand, model, isAirbagOK, isTaxi):
+    def __init__(self, brand, model, isAirbagOK, isTaxi, isOnSale):
         self.brand = brand
         self.model = model
         self.isAirbagOK = isAirbagOK
         self.__isTaxi = isTaxi
+        self.__isOnSale = isOnSale
         Car.numOfCars += 1
         Car.listOfCars.append(self)
 
@@ -18,18 +21,40 @@ class Car:
         print('Brand \t{}\nModel \t{}\nAirbags status\t{}\nIs Taxi {}\t'.format(self.brand, self.model, self.isAirbagOK,
                                                                                 self.__isTaxi))
 
+    def GetIsOnSale(self):
+        return self.__isOnSale
 
-car_01 = Car("Opel", "Corsa", False, True)
+    def SetIsOnSale(self, newIsOnSaleStatus):
+        if self.brand == brandOnSale:
+            self.__isOnSale = newIsOnSaleStatus
+            print('Changing IsOnSale stratus to {} for {}'.format(newIsOnSaleStatus, self.brand))
+        else:
+            print("Can not change IsONsale status. Sale valid only for {}".format(brandOnSale))
 
-print(car_01.isAirbagOK, car_01.model, car_01.brand)
-car_01.GetInfo()
-car_01.YearOfProduction = 2006
-del  car_01.YearOfProduction
+    IsOnSale = property(GetIsOnSale, SetIsOnSale, None,"Documentation" )
 
-setattr(car_01,"KM",123532)
-delattr(car_01,"KM")
-print(hasattr(car_01,"brand"))
-print("Vars:", vars(car_01))
-print("Number of Cars ", Car.numOfCars)
+    @classmethod
+    def ReadFromText(cls,aText):
+        aNewCar = cls(*aText.split(':'))
+        return aNewCar
 
+    @staticmethod
+    def Convert_KM_KW(KM):
+        return KM * 0,735
 
+    @staticmethod
+    def Convert_KW_KM(KW):
+        return KW * 0, 735
+
+car_01 = Car("Opel", "Corsa", False, True, False)
+car_02 = Car("skoda", "Fabia", False, True, True)
+
+print("Cars status:", car_01.GetIsOnSale(), car_02.GetIsOnSale())
+car_01.SetIsOnSale(True)
+car_02.SetIsOnSale(True)
+car_01.IsOnSale = True
+car_02.IsOnSale = True
+
+lineOfText = "Renault:Megane:True:True:False"
+car_04 = Car.ReadFromText(lineOfText)
+print(car_04.GetInfo())

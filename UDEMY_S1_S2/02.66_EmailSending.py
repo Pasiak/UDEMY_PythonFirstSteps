@@ -13,7 +13,7 @@ Subject : {}
 
 
 user = 'pytesto997@gmail.com'
-password = "Cwaniak12"
+password = "test"
 
 try:
     serwer = smtplib.SMTP_SSL('smtp.gmail.com',465)
